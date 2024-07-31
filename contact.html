@@ -252,31 +252,8 @@ https://templatemo.com/tm-590-topic-listing
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/custom.js"></script>
-
-        <script>
-            const form = document.forms['formContact']
-            const submitButton = document.querySelector("#submitButton")
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyR6lIHfIZG9o3LA8IQgPZ0n4j6T2agSTX5OHVwOfYAAQTL1KATiuq1qp_sjakXdC13/exec'
-         
-            form.addEventListener('submit', e => {
-              submitButton.disabled = true
-              e.preventDefault()
-              let requestBody = new FormData(form)
-              fetch(scriptURL, { method: 'POST', body: requestBody, mode: 'cors'})
-              .then(response => {
-                  alert('Success!', response)
-                  console.log(response)
-                  submitButton.disabled = false
-                })
-                .catch(error => {
-                    alert('Error', error.message)
-                    console.log(error)
-                    submitButton.disabled = false
-                })
-                console.log(requestBody)
-                form.reset()
-            })
-         </script> 
+        <!-- JAVASCRIPT TO SEND FORM IN GOOGLE SHEET -->
+        <script src="js/to-spreadsheet.js"></script> 
 
     </body>
 </html>
