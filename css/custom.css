@@ -1,0 +1,33 @@
+.floating-component {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixes the position relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the position to center */
+    width: 80%; /* Adjust as needed */
+    max-width: 500px; /* Adjust as needed */
+    background: white; /* Background color */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
+    z-index: 1000; /* Ensures it's above other content */
+    padding: 20px; /* Padding inside the component */
+}
+
+.floating-component img {
+    width: 100%; /* Makes the image responsive */
+    border-radius: 4px; /* Rounded corners for image */
+}
+
+.floating-component .close-btn {
+    position: absolute; /* Positioned relative to the component */
+    top: 10px; /* Distance from top */
+    right: 10px; /* Distance from right */
+    cursor: pointer; /* Pointer cursor for button */
+    font-size: 24px; /* Font size for close icon */
+    color: #333; /* Color for the close icon */
+}
+
+.floating-component .close-btn:hover {
+    color: red; /* Change color on hover */
+}
