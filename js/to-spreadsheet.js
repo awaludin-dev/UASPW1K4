@@ -4,12 +4,12 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbzqh_4uTw0JJat7kSzjLu
 const closeForm = document.querySelector("#floatingComponent")
 
 form.addEventListener('submit', e => {
+    closeForm.setAttribute("style", "display: block")
     submitButton.disabled = true
     e.preventDefault()
     let requestBody = new FormData(form)
     fetch(scriptURL, { method: 'POST', body: requestBody, mode: 'cors'})
     .then(response => {
-        closeForm.setAttribute("style", "display: block")
         submitButton.disabled = false 
     })
     .catch(error => {
